@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     android:orientation="vertical"
+    tools:context=".UserDescription">
+
+    <ImageButton
+        android:id="@+id/camera"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/ic_photo_camera_black_24dp"
+        android:scaleType="fitXY" />
+
+    <Button
+        android:id="@+id/gallery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="2dp"
+        android:background="@drawable/forbtn"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="Gallery"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#2DC931"></Button>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <EditText
+            android:id="@+id/userPb"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/foredittext"
+             android:hint="Write your problems"
+            android:paddingLeft="10dp"
+            android:textAlignment="textStart"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#27AE2A"
+            android:textColorHint="#2DC931"
+
+            tools:ignore="RtlCompat" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/forbtn"
+        android:paddingLeft="80dp"
+        android:paddingRight="80dp"
+        android:text="Save Data"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#2DC931" />
+    <Button
+        android:id="@+id/show"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/forbtn"
+        android:paddingLeft="80dp"
+        android:paddingRight="80dp"
+        android:text="Show Image"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#2DC931" />
+</LinearLayout>

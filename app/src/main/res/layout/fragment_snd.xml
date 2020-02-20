@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    tools:context=".Snd">
+
+    <ImageButton
+        android:layout_width="150dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="25dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/icon" />
+<LinearLayout
+    android:gravity="center"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ss.anoop.awesometextinputlayout.AwesomeTextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:padding="16dp"
+        app:borderColor="#008577"
+        app:borderWidth="2dp"
+        app:cornerRadius="4dp">
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:hint="Email/phone"
+            android:backgroundTint="#92000000"
+            android:textColorHint="#2DC931"
+            android:background="@drawable/foredittext"
+            android:imeOptions="actionNext"
+            android:paddingLeft="10dp"/>
+
+
+    </ss.anoop.awesometextinputlayout.AwesomeTextInputLayout>
+
+    <ss.anoop.awesometextinputlayout.AwesomeTextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:passwordToggleEnabled="true"
+        android:layout_marginTop="20dp"
+        android:padding="16dp"
+        app:borderColor="#008577"
+        app:borderWidth="2dp"
+        app:cornerRadius="2dp">
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:backgroundTint="#92000000"
+            android:textColorHint="#2DC931"
+            android:hint="password"
+            android:imeOptions="actionNext"
+            android:paddingLeft="10dp"/>
+    </ss.anoop.awesometextinputlayout.AwesomeTextInputLayout>
+    <TextView
+        android:layout_marginTop="10dp"
+        android:text="Forgot your password?"
+        android:textColor="#000"
+        android:layout_gravity="end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="10dp"-->
+    <!--        android:gravity="center_horizontal"-->
+    <!--        android:orientation="horizontal">-->
+
+    <!--        <CheckBox-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginLeft="10dp" />-->
+
+    <!--        <TextView-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:text="Keep me login"-->
+    <!--            android:textStyle="bold" />-->
+    <!--    </LinearLayout>-->
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/forbtn"
+        android:paddingLeft="120dp"
+        android:paddingRight="120dp"
+        android:text="login" />
+
+    <LinearLayout
+        android:id="@+id/resister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="2dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:textColor="#000"
+            android:text="Don't have an account?" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:pointerIcon="zoom_in"
+            android:text="Sign Up"
+            android:textColor="#008577"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/admin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:visibility="gone"
+            android:text="admin"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/test"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="Test"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
+
+</LinearLayout>

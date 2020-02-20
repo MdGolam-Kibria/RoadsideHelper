@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_margin="10dp"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Registration page"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#12C519"
+        android:textStyle="bold" />
+
+    <ss.anoop.awesometextinputlayout.AwesomeTextInputLayout
+        android:layout_width="300dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        app:borderColor="#008577"
+
+        app:borderWidth="2dp"
+        app:cornerRadius="2dp">
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#92000000"
+            android:textColorHint="#2DC931"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/foredittext"
+            android:hint="Name"
+          />
+
+    </ss.anoop.awesometextinputlayout.AwesomeTextInputLayout>
+
+    <ss.anoop.awesometextinputlayout.AwesomeTextInputLayout
+        android:layout_width="300dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        app:borderColor="#008577"
+        app:borderWidth="2dp"
+        app:cornerRadius="2dp">
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/foredittext"
+            android:hint="Email"
+            android:backgroundTint="#92000000"
+            android:textColorHint="#2DC931"
+            android:paddingTop="5dp"
+
+            android:paddingBottom="5dp" />
+    </ss.anoop.awesometextinputlayout.AwesomeTextInputLayout>
+
+    <ss.anoop.awesometextinputlayout.AwesomeTextInputLayout
+        android:layout_width="300dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        app:borderColor="#008577"
+        app:borderWidth="2dp"
+        app:cornerRadius="2dp">
+
+        <EditText
+            android:id="@+id/phone"
+            android:layout_width="300dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content"
+             android:background="@drawable/foredittext"
+            android:hint="Phone"
+            android:paddingLeft="10dp"
+            android:backgroundTint="#92000000"
+            android:textColorHint="#2DC931"
+             android:paddingTop="5dp"
+            android:paddingBottom="5dp" />
+    </ss.anoop.awesometextinputlayout.AwesomeTextInputLayout>
+
+    <ss.anoop.awesometextinputlayout.AwesomeTextInputLayout
+        android:layout_width="300dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        app:borderColor="#008577"
+        app:borderWidth="2dp"
+        app:cornerRadius="2dp">
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/foredittext"
+            android:hint="password"
+            android:backgroundTint="#92000000"
+            android:textColorHint="#2DC931"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp" />
+    </ss.anoop.awesometextinputlayout.AwesomeTextInputLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="Type : "
+        android:textSize="18dp"
+        android:textColor="#009688"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:orientation="horizontal">
+
+        <RadioGroup
+            android:id="@+id/radioGroupID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+
+                android:id="@+id/user"
+                android:checked="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#2DC931"
+                android:backgroundTint="#92000000"
+                android:text="User"
+                android:textSize="10dp" />
+
+            <RadioButton
+                android:id="@+id/serviceProvider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#2DC931"
+                android:backgroundTint="#92000000"
+
+                 android:text="Service provider"
+                android:textSize="10dp" />
+        </RadioGroup>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="Select location : "
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textColor="#009688" />
+
+    <ss.anoop.awesometextinputlayout.AwesomeTextInputLayout
+        android:layout_width="300dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        app:borderColor="#008577"
+        app:borderWidth="2dp"
+        app:cornerRadius="2dp">
+
+        <EditText
+            android:id="@+id/location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:hint="Location"
+            android:background="@drawable/foredittext"
+            android:drawableRight="@drawable/btnarrow"
+            android:backgroundTint="#92000000"
+            android:textColorHint="#2DC931"
+            android:paddingTop="5dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="5dp" />
+
+    </ss.anoop.awesometextinputlayout.AwesomeTextInputLayout>
+
+    <Button
+        android:id="@+id/signupBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/forbtn"
+        android:paddingLeft="100dp"
+        android:paddingRight="100dp"
+        android:text="Submit"
+        android:textAllCaps="false" />
+
+</LinearLayout>
