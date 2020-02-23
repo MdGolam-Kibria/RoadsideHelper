@@ -205,7 +205,7 @@ public class Snd extends Fragment {
             Toast.makeText(getContext(), "Welcome ServiceProviders", Toast.LENGTH_LONG).show();
             startActivity(new Intent(getContext(), ShowProblems.class));
         } else {
-
+// xx
             Toast.makeText(getContext(), "No ServiceProviders found", Toast.LENGTH_LONG).show();
         }
     }
