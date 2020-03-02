@@ -1,22 +1,16 @@
 package com.example.myapplication.probImageAndPbView;
 
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.util.Base64;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.myapplication.R;
 import com.example.myapplication.Retrofit.BaseUrl;
-
-import java.io.ByteArrayInputStream;
-import java.util.List;
+import com.example.myapplication.Test.JsonImageConvert;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -63,9 +57,13 @@ public class ShowPbImage extends AppCompatActivity {
 
     private void problemShow(ProblemModel body) {//this method for byte[] to bitmap.
 
-        byte[] imgbytes = Base64.decode(body.getProblemImage(), Base64.DEFAULT);
-        Bitmap bitmap = BitmapFactory.decodeByteArray(imgbytes, 0,
-                imgbytes.length);
+//        byte[] imgbytes = Base64.decode(body.getProblemImage(), Base64.DEFAULT);
+//        Bitmap bitmap = BitmapFactory.decodeByteArray(imgbytes, 0,
+//                imgbytes.length);
+//        imageView.setImageBitmap(bitmap);
+        //uporer logic o kaj korbe.
+        JsonImageConvert jsonImageConvert = new JsonImageConvert();
+        Bitmap bitmap = jsonImageConvert.jsonimageConvertTOBitmap(body.getProblemImage());
         imageView.setImageBitmap(bitmap);
         textView.setText(body.getProblemDescription());
     }

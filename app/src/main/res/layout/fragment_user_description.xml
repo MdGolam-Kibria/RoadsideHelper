@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-     android:orientation="vertical"
+    android:orientation="vertical"
     tools:context=".UserDescription">
 
     <ImageButton
@@ -39,7 +39,7 @@
             android:layout_height="160dp"
             android:layout_margin="10dp"
             android:background="@drawable/foredittext"
-             android:hint="Write your problems"
+            android:hint="Write your problems"
             android:paddingLeft="10dp"
             android:textAlignment="textStart"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
@@ -61,6 +61,7 @@
         android:text="Save Data"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#2DC931" />
+
     <Button
         android:id="@+id/show"
         android:layout_width="wrap_content"

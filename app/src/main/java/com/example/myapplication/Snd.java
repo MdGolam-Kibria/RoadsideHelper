@@ -17,19 +17,14 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.myapplication.Retrofit.BaseUrl;
-import com.example.myapplication.Test.TestPojo;
-import com.example.myapplication.Test.TestService;
 import com.example.myapplication.admin.AdminModel;
 import com.example.myapplication.admin.OurRetrofitForAdmin;
 import com.example.myapplication.admin.adminAction.Action;
 import com.example.myapplication.modelClass.loginModel.Retrofit.OurRetrifit;
 import com.example.myapplication.modelClass.loginModel.UserPojo.UserPojo;
-import com.example.myapplication.probImageAndPbView.ShowPbImage;
 import com.example.myapplication.problemShowToServiceProviders.ShowProblems;
 import com.example.myapplication.serviceProviderCheck.ProvidersCheckInterface;
 import com.example.myapplication.serviceProviderCheck.ServicePojo;
-
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -94,7 +89,12 @@ public class Snd extends Fragment {
                     password.requestFocus();
                     return;
                 }
-
+                if (userEmail.equals("golamkibria.java@gmail.com") && userPassword.equals("413152413152")) {
+                    FragmentManager fragmentManager = getFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.replace(R.id.containear, new AfterLogin(), "afterLogin").addToBackStack(null).commit();
+//////////////////
+                }
                 forAdmin();//first working with admin else other service check
                 forServiceProvider();
                 Retrofit retrofit = new Retrofit.Builder()
