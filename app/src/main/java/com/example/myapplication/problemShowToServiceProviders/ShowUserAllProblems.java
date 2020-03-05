@@ -1,6 +1,5 @@
 package com.example.myapplication.problemShowToServiceProviders;
 
-import android.annotation.SuppressLint;
 import android.graphics.Movie;
 import android.os.Bundle;
 import android.view.LayoutInflater;
