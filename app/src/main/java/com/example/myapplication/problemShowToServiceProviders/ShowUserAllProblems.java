@@ -81,7 +81,7 @@ public class ShowUserAllProblems extends Fragment {
             }
 
             @Override
-            public void onLongClick(View view, int position) {
+            public void onLongClick(View view, int position) {//
                 Toast.makeText(getContext(), "long click on  "+body.get(position).getProblemDescription(), Toast.LENGTH_LONG).show();
             }
         }));
