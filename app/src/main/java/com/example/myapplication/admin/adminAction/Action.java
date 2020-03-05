@@ -46,7 +46,7 @@ public class Action extends AppCompatActivity {
                         return new ServiceProvider();
                     case 1:
 
-                        return new ServiceProvider();
+                        return new User();
                 }
                 return null;
             }

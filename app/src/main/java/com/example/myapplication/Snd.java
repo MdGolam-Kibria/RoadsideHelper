@@ -22,7 +22,7 @@ import com.example.myapplication.admin.OurRetrofitForAdmin;
 import com.example.myapplication.admin.adminAction.Action;
 import com.example.myapplication.modelClass.loginModel.Retrofit.OurRetrifit;
 import com.example.myapplication.modelClass.loginModel.UserPojo.UserPojo;
-import com.example.myapplication.problemShowToServiceProviders.ShowProblems;
+import com.example.myapplication.problemShowToServiceProviders.ShowUserAllProblems;
 import com.example.myapplication.serviceProviderCheck.ProvidersCheckInterface;
 import com.example.myapplication.serviceProviderCheck.ServicePojo;
 
@@ -203,9 +203,11 @@ public class Snd extends Fragment {
     private void serviceProviderCheck(ServicePojo body) {
         if (body.getServiceEmail() != null) {
             Toast.makeText(getContext(), "Welcome ServiceProviders", Toast.LENGTH_LONG).show();
-            startActivity(new Intent(getContext(), ShowProblems.class));
+
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.containear,new ShowUserAllProblems(),"afterLogin").addToBackStack(null).commit();
         } else {
-// xx
             Toast.makeText(getContext(), "No ServiceProviders found", Toast.LENGTH_LONG).show();
         }
     }

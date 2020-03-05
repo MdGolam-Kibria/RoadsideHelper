@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#FFFFFF"
     tools:context=".UserDescription">
 
     <ImageButton
@@ -21,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="2dp"
-        android:background="@drawable/forbtn"
+        android:background="@drawable/bid_btn_design"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:text="Gallery"
@@ -38,7 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="160dp"
             android:layout_margin="10dp"
-            android:background="@drawable/foredittext"
+            android:background="@drawable/bid_btn_design"
             android:hint="Write your problems"
             android:paddingLeft="10dp"
             android:textAlignment="textStart"
@@ -55,7 +56,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="16dp"
-        android:background="@drawable/forbtn"
+        android:background="@drawable/bid_btn_design"
         android:paddingLeft="80dp"
         android:paddingRight="80dp"
         android:text="Save Data"
@@ -68,7 +69,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="16dp"
-        android:background="@drawable/forbtn"
+        android:background="@drawable/bid_btn_design"
         android:paddingLeft="80dp"
         android:paddingRight="80dp"
         android:text="Show Image"

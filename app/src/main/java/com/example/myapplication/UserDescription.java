@@ -6,12 +6,6 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
-
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-
 import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,8 +16,12 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
 import com.example.myapplication.Retrofit.BaseUrl;
-import com.example.myapplication.SendDataToMysqlUsingRestAPI.Model;
 import com.example.myapplication.admin.UserProbPojo.OurretrofitForUserPb;
 import com.example.myapplication.admin.UserProbPojo.PbPojo;
 import com.example.myapplication.probImageAndPbView.ShowPbImage;
@@ -37,8 +35,6 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-import static android.app.Activity.RESULT_OK;
-
 
 /**
  * A simple {@link Fragment} subclass.
@@ -46,12 +42,11 @@ import static android.app.Activity.RESULT_OK;
 public class UserDescription extends Fragment {
     ImageButton imageButton;
     Bitmap photo;
-    static final int REQUEST_IMAGE_CAPTURE = 2;
+    static final int REQUEST_IMAGE_CAPTURE = 1;
     Button submit, show;
     EditText userPb;
     private Uri imageUri;
     static final int REQUEST_IMAGE_CAPTURE_gallery = 1;
-
     public UserDescription() {
         // Required empty public constructor
     }
@@ -135,7 +130,7 @@ public class UserDescription extends Fragment {
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE_SECURE);
                 startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
             }
         });

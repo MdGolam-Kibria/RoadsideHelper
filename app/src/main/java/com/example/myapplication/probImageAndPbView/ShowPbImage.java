@@ -57,11 +57,6 @@ public class ShowPbImage extends AppCompatActivity {
 
     private void problemShow(ProblemModel body) {//this method for byte[] to bitmap.
 
-//        byte[] imgbytes = Base64.decode(body.getProblemImage(), Base64.DEFAULT);
-//        Bitmap bitmap = BitmapFactory.decodeByteArray(imgbytes, 0,
-//                imgbytes.length);
-//        imageView.setImageBitmap(bitmap);
-        //uporer logic o kaj korbe.
         JsonImageConvert jsonImageConvert = new JsonImageConvert();
         Bitmap bitmap = jsonImageConvert.jsonimageConvertTOBitmap(body.getProblemImage());
         imageView.setImageBitmap(bitmap);

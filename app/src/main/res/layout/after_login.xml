@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     android:orientation="vertical"
     tools:context=".AfterLogin">
 
@@ -106,42 +107,5 @@
             android:textStyle="bold" />
     </LinearLayout>
 
-
-    <!--    <Button-->
-    <!--        android:drawableLeft="@drawable/ic_privatecar"-->
-    <!--        android:id="@+id/privateCar"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="100dp"-->
-    <!--        android:layout_marginTop="10dp"-->
-    <!--        android:text="private car"-->
-    <!--        android:textAllCaps="false"-->
-    <!--        android:textSize="33dp" />-->
-
-    <!--    <Button-->
-    <!--        android:id="@+id/motorCycle"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="100dp"-->
-    <!--        android:layout_marginTop="10dp"-->
-    <!--        android:text="motorcycle"-->
-    <!--        android:textAllCaps="false"-->
-    <!--        android:textSize="33dp" />-->
-
-    <!--    <Button-->
-    <!--        android:id="@+id/truck"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="100dp"-->
-    <!--        android:layout_marginTop="10dp"-->
-    <!--        android:text="Truck"-->
-    <!--        android:textAllCaps="false"-->
-    <!--        android:textSize="33dp" />-->
-
-    <!--    <Button-->
-    <!--        android:id="@+id/homeService"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="100dp"-->
-    <!--        android:layout_marginTop="10dp"-->
-    <!--        android:text="Home service"-->
-    <!--        android:textAllCaps="false"-->
-    <!--        android:textSize="33dp" />-->
 
 </LinearLayout>

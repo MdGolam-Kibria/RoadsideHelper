@@ -32,6 +32,7 @@ public class CustomAdapterForAdminShowServiceProviders extends RecyclerView.Adap
     @Override
     public void onBindViewHolder(@NonNull ViewHolderShowAllServiceProviders holder, int position) {
             ServicePojo currentData = list.get(position);
+
             holder.serviceName.setText(currentData.getServiceName());
             holder.serviceEmail.setText(currentData.getServiceEmail());
             holder.servicePhone.setText(currentData.getServicePhone());
