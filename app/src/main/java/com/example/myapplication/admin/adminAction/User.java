@@ -16,6 +16,8 @@ import com.example.myapplication.Retrofit.BaseUrl;
 import com.example.myapplication.admin.adminAction.user.CustomUserAdapterForUsers;
 import com.example.myapplication.admin.adminAction.user.UserAndServiceProviderPojo;
 import com.example.myapplication.admin.adminAction.user.UserInterface;
+import com.example.myapplication.recyclerViewClickAndDeviderHundle.MyRecyclerViewDividerItemDecoration;
+import com.example.myapplication.recyclerViewClickAndDeviderHundle.RecyclerTouchListener;
 
 import java.util.List;
 
@@ -69,9 +71,24 @@ public class User extends Fragment {
         return view;
     }
 
-    private void showIt(List<UserAndServiceProviderPojo> body) {
+    private void showIt(final List<UserAndServiceProviderPojo> body) {
 
         CustomUserAdapterForUsers customUserAdapter = new CustomUserAdapterForUsers(body, getContext());
+        recyclerView.addItemDecoration(new MyRecyclerViewDividerItemDecoration(getContext(), LinearLayoutManager.VERTICAL, 16));
+        // above parameters for recycler view devider style class this copy from google link below
+        //https://www.androidhive.info/2016/01/android-working-with-recycler-view/
+        recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getContext(), recyclerView, new RecyclerTouchListener.ClickListener() {
+            @Override
+            public void onClick(View view, int position) {
+                UserAndServiceProviderPojo movie = body.get(position);
+                Toast.makeText(getContext(), movie.getUserName() + " is selected!", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onLongClick(View view, int position) {
+
+            }
+        }));
         recyclerView.setAdapter(customUserAdapter);
     }
 

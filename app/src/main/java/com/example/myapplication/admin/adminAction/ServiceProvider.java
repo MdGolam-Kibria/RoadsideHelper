@@ -2,18 +2,20 @@ package com.example.myapplication.admin.adminAction;
 
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
 import com.example.myapplication.R;
 import com.example.myapplication.Retrofit.BaseUrl;
 import com.example.myapplication.admin.adminAction.ServiceProviderPack.CustomAdapterForAdminShowServiceProviders;
+import com.example.myapplication.recyclerViewClickAndDeviderHundle.MyRecyclerViewDividerItemDecoration;
+import com.example.myapplication.recyclerViewClickAndDeviderHundle.RecyclerTouchListener;
 import com.example.myapplication.serviceProviderCheck.ProvidersCheckInterface;
 import com.example.myapplication.serviceProviderCheck.ServicePojo;
 
@@ -64,8 +66,23 @@ public class ServiceProvider extends Fragment {
         return view;
     }
 
-    private void showIt(List<ServicePojo> body) {
+    private void showIt(final List<ServicePojo> body) {
         CustomAdapterForAdminShowServiceProviders customAdapterForAdminShowServiceProviders = new CustomAdapterForAdminShowServiceProviders(body,getContext());
+        recyclerView.addItemDecoration(new MyRecyclerViewDividerItemDecoration(getContext(), LinearLayoutManager.VERTICAL, 16));
+        // above parameters for recycler view devider style class and click listener copy from google link below
+        //https://www.androidhive.info/2016/01/android-working-with-recycler-view/
+        recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getContext(), recyclerView, new RecyclerTouchListener.ClickListener() {
+            @Override
+            public void onClick(View view, int position) {
+                ServicePojo movie = body.get(position);
+                Toast.makeText(getContext(), movie.getServiceName() + " is selected!", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onLongClick(View view, int position) {
+
+            }
+        }));
         recyclerView.setAdapter(customAdapterForAdminShowServiceProviders);
     }
 }

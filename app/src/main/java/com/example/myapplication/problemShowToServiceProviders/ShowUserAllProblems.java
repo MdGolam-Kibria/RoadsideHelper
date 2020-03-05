@@ -1,22 +1,27 @@
 package com.example.myapplication.problemShowToServiceProviders;
 
+import android.annotation.SuppressLint;
+import android.graphics.Movie;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.R;
 import com.example.myapplication.Retrofit.BaseUrl;
+import com.example.myapplication.recyclerViewClickAndDeviderHundle.MyRecyclerViewDividerItemDecoration;
+import com.example.myapplication.recyclerViewClickAndDeviderHundle.RecyclerTouchListener;
 import com.example.myapplication.showUserProblemstoServiceProviders.CustomSharPbToServiceProvidersAdapter;
 import com.example.myapplication.showUserProblemstoServiceProviders.ShareProblem;
 import com.example.myapplication.showUserProblemstoServiceProviders.ShareProblemToServiceProviders;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -29,6 +34,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ShowUserAllProblems extends Fragment {
 
     private RecyclerView recyclerViewpb;
+    private List<Movie> movieList = new ArrayList<>();
     public ShowUserAllProblems() {
         // Required empty public constructor
     }
@@ -41,6 +47,7 @@ public class ShowUserAllProblems extends Fragment {
         recyclerViewpb = view.findViewById(R.id.recyclerViewForShowAllProblemsss);
         recyclerViewpb.setHasFixedSize(true);
         recyclerViewpb.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerViewpb.setItemAnimator(new DefaultItemAnimator());
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BaseUrl.BASE_URL)  //using rest api my rest api name is  = forRoadside into my pc
                 .addConverterFactory(GsonConverterFactory.create()).build();
@@ -58,27 +65,27 @@ public class ShowUserAllProblems extends Fragment {
 
             }
         });
-        recyclerViewpb.setFocusableInTouchMode(true);
-
-        recyclerViewpb.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
-            @Override
-            public boolean onInterceptTouchEvent(@NonNull RecyclerView rv, @NonNull MotionEvent e) {
-                return false;
-            }
-
-            @Override
-            public void onTouchEvent(@NonNull RecyclerView rv, @NonNull MotionEvent e) {
-            }
-
-            @Override
-            public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
-
-            }
-        });
         return view;
     }
-    private void showIt(List<ShareProblemToServiceProviders> body) {
+    private void showIt(final List<ShareProblemToServiceProviders> body) {
         CustomSharPbToServiceProvidersAdapter custom  = new CustomSharPbToServiceProvidersAdapter(body,getContext());
+        recyclerViewpb.addItemDecoration(new MyRecyclerViewDividerItemDecoration(getContext(), LinearLayoutManager.VERTICAL, 16));
+        // above parameters for recycler view devider style class this copy from google link below
+        //https://www.androidhive.info/2016/01/android-working-with-recycler-view/
+        recyclerViewpb.addOnItemTouchListener(new RecyclerTouchListener(getContext(), recyclerViewpb, new RecyclerTouchListener.ClickListener() {
+             @Override
+            public void onClick(View view, int position) {
+
+//                Movie movie = body.get(position);
+                ShareProblemToServiceProviders movie = body.get(position);
+                Toast.makeText(getContext(), movie.getProblemDescription() + " is selected!", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onLongClick(View view, int position) {
+                Toast.makeText(getContext(), "long click on  "+body.get(position).getProblemDescription(), Toast.LENGTH_LONG).show();
+            }
+        }));
         recyclerViewpb.setAdapter(custom);
     }
 }
